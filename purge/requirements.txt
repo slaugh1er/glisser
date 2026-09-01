@@ -1,0 +1,12 @@
+# Python 3.12 exactly: on 3.13+ opentele dies on a metaclass.
+#   uv venv --python 3.12 .venv && uv pip install -r requirements.txt
+#
+# opentele has been dead since 2022 (last release 1.15.1) and does not know
+# the tdata format of Telegram Desktop 12.x — tdata_compat.apply() closes the
+# gap. The version is nailed down because the patch was written for it.
+opentele==1.15.1
+telethon==1.44.0
+PyQt5==5.15.11
+
+# optional, but noticeably speeds up telethon crypto
+tgcrypto==1.2.5

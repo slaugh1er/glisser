@@ -1,0 +1,31 @@
+# Everything a run reads or writes lives here: the database (a curated index
+# of exactly the risky content, plus the log of what was deleted), the export
+# with the whole correspondence in it, the live session and auth_key, the API
+# key, the logs. None of it ever leaves this machine.
+state/
+
+# Belt and braces, in case any of it is ever put outside state/.
+*.db
+*.db-wal
+*.db-shm
+*.bak
+*.session
+*.session-journal
+*.log
+.env
+.env.*
+result.json
+telegram_dump/
+DataExport_*/
+tdata/
+
+# Private notes: dialog titles, corpus figures, the course of the operation.
+TASK*.md
+*-design.md
+
+# Build and environments.
+target/
+purge/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
